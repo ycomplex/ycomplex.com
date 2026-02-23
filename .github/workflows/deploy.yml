@@ -23,5 +23,6 @@ jobs:
             --exclude='.git/' \
             --exclude='.github/' \
             --exclude='docs/' \
+            --exclude='CLAUDE.md' \
             -e "ssh -i ~/.ssh/deploy_key" \
             ./ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}/
