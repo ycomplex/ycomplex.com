@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Software — YComplex</title>
+<meta name="description" content="Software products by YComplex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .page {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem 4rem;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    opacity: 0;
+    animation: fadeIn 1.2s var(--ease-out) 0.4s forwards;
+  }
+
+  .page-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .page-subtitle {
+    font-family: var(--font-mono);
+    font-weight: 300;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 1rem;
+  }
+
+  /* ---- Product card ---- */
+  .products {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 640px;
+    opacity: 0;
+    animation: fadeIn 1.2s var(--ease-out) 0.8s forwards;
+  }
+
+  .product-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.5s var(--ease-out),
+                border-color 0.5s ease,
+                box-shadow 0.5s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    box-shadow: 0 20px 60px -20px rgba(201, 168, 76, 0.1),
+                0 0 40px -20px rgba(201, 168, 76, 0.06);
+  }
+
+  .product-card-img {
+    position: relative;
+    background: var(--bg);
+    padding: 1.5rem 1.5rem 0;
+    overflow: hidden;
+  }
+
+  .product-card-img::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--bg-card));
+    z-index: 1;
+  }
+
+  .product-card-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  }
+
+  .product-card-body {
+    padding: 1.5rem 1.8rem 1.8rem;
+  }
+
+  .product-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+  }
+
+  .product-card-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.02em;
+    color: var(--text);
+  }
+
+  .product-card-desc {
+    font-family: var(--font-mono);
+    font-weight: 300;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+  }
+
+  .product-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .product-card-arrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    transition: letter-spacing 0.4s var(--ease-out);
+  }
+
+  .product-card:hover .product-card-arrow {
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 6rem 1.2rem 3rem; }
+    .product-card-img { padding: 1rem 1rem 0; }
+    .product-card-body { padding: 1.2rem 1.4rem 1.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="mesh"></canvas>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="y">Y</span>Complex</a>
+  <div class="nav-right">
+    <a href="mailto:contact@ycomplex.com" class="nav-link">Contact</a>
+  </div>
+</nav>
+
+<div class="corner corner-tl"></div>
+<div class="corner corner-br"></div>
+
+<main class="page">
+  <div class="page-header">
+    <h1 class="page-title">Software</h1>
+    <p class="page-subtitle">Tools we build and ship</p>
+  </div>
+
+  <div class="products">
+    <a href="software/grokdown.html" class="product-card">
+      <div class="product-card-img">
+        <img src="assets/grokdown-screenshot.png" alt="GrokDown — Media library for Grok Imagine" loading="lazy">
+      </div>
+      <div class="product-card-body">
+        <div class="product-card-top">
+          <span class="product-card-name">GrokDown</span>
+          <span class="badge">macOS</span>
+        </div>
+        <p class="product-card-desc">
+          Your Grok Imagine media, organized locally on your Mac. Browse, tag, and filter AI-generated images and videos in a beautiful native gallery.
+        </p>
+        <div class="product-card-footer">
+          <span class="badge">Coming Soon</span>
+          <span class="product-card-arrow">View &rarr;</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</main>
+
+<script src="mesh.js"></script>
+<script>initMesh({ nodeCount: 35, connectionDistance: 180 });</script>
+
+</body>
+</html>
