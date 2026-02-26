@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The SpeedRead Story — YComplex</title>
+<meta name="description" content="How SpeedRead came to be — the story behind the app">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .page {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    padding: 8rem 2rem 6rem;
+  }
+
+  .page-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    animation: fadeIn 1.2s var(--ease-out) 0.4s forwards;
+  }
+
+  .page-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+    letter-spacing: 0.03em;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .content {
+    opacity: 0;
+    animation: fadeIn 1.2s var(--ease-out) 0.8s forwards;
+  }
+
+  .content p {
+    font-family: var(--font-mono);
+    font-weight: 300;
+    font-size: 0.85rem;
+    line-height: 2;
+    color: var(--text-dim);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 6rem 1.2rem 4rem; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="mesh"></canvas>
+
+<div class="corner corner-tl"></div>
+<div class="corner corner-br"></div>
+
+<main class="page">
+  <div class="page-inner">
+
+    <div class="page-header">
+      <h1 class="page-title">How SpeedRead Came to Be</h1>
+    </div>
+
+    <div class="content">
+      <p>
+        SpeedRead started with an email. Someone I trust sent me a link to a long Anthropic article and insisted I read it. It was one of those pieces you know is worth your time, but the length made it hard to commit to in the moment. It sat in my inbox.
+      </p>
+
+      <p>
+        Around the same time, a video had been making the rounds on LinkedIn about rapid serial visual presentation&mdash;the technique of displaying text one word at a time with a highlighted focal point. I'd watched it a couple of weeks earlier and couldn't stop thinking about it. The idea that you could read significantly faster just by changing how words are delivered to your eyes felt like one of those things that's obvious in hindsight.
+      </p>
+
+      <p>
+        The third piece was a personal itch. Most of the work I'd done building things had been web-based&mdash;websites, dashboards, tools that live in a browser. I wanted to try something different: take an idea all the way from concept to a published app on the App Store and Play Store. A real app, on a real phone, that real people could download.
+      </p>
+
+      <p>
+        Those three things&mdash;an article I needed to read, a technique I couldn't stop thinking about, and a desire to ship something native&mdash;collided at the right moment. SpeedRead was born from that collision. It's the app I built so I could finally read that article, and everything else that's been piling up since.
+      </p>
+    </div>
+
+  </div>
+</main>
+
+<script src="../mesh.js"></script>
+<script>initMesh({ nodeCount: 20, connectionDistance: 160 });</script>
+
+</body>
+</html>
