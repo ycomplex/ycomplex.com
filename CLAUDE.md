@@ -8,6 +8,7 @@ Static website for YComplex — Digital & AI Consulting and Software Services.
 index.html              Homepage (landing page, links to Software)
 software.html           Software product showcase (card grid)
 software/grokdown.html  GrokDown product detail page with download
+software/speedread.html SpeedRead product detail page (Coming Soon)
 style.css               Shared design system (variables, nav, animations, grain, corners)
 mesh.js                 Shared animated network mesh background (configurable)
 404.html                Custom 404 error page
@@ -15,6 +16,7 @@ mesh.js                 Shared animated network mesh background (configurable)
 assets/                 Images, screenshots, and downloadable files
   grokdown-screenshot.png
   GrokDown-1.0.0.dmg
+  speedread-screenshot.png
 docs/plans/             Design documents
 ```
 
@@ -31,6 +33,7 @@ docs/plans/             Design documents
 - **Homepage** (`index.html`): Centered brand with animated mesh, tagline links to Software page, contact email
 - **Software** (`software.html`): Product card grid. Each card has screenshot, name, description, platform badge, and links to its detail page
 - **GrokDown** (`software/grokdown.html`): Product detail with hero screenshot, description, 2x2 feature grid, and DMG download button
+- **SpeedRead** (`software/speedread.html`): Product detail with hero composite screenshot (library + reader views), description, 2x2 feature grid, and "Coming Soon" CTA. iOS & Android RSVP speed reading app.
 - **404** (`404.html`): Ghost-outline 404 with sparse mesh and link back to homepage
 
 ## Adding a New Software Product
