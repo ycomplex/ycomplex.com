@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpeedRead Privacy Policy — YComplex</title>
+<meta name="description" content="Privacy Policy for SpeedRead — RSVP speed reading app">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .page {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    padding: 8rem 2rem 6rem;
+  }
+
+  .page-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeIn 1.2s var(--ease-out) 0.4s forwards;
+  }
+
+  .page-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+    letter-spacing: 0.03em;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+  }
+
+  .page-subtitle {
+    font-family: var(--font-mono);
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .content {
+    opacity: 0;
+    animation: fadeIn 1.2s var(--ease-out) 0.8s forwards;
+  }
+
+  .content h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text);
+    letter-spacing: 0.02em;
+    margin: 2.5rem 0 1rem;
+  }
+
+  .content p {
+    font-family: var(--font-mono);
+    font-weight: 300;
+    font-size: 0.82rem;
+    line-height: 1.8;
+    color: var(--text-dim);
+    letter-spacing: 0.01em;
+    margin-bottom: 1rem;
+  }
+
+  .content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  .content li {
+    font-family: var(--font-mono);
+    font-weight: 300;
+    font-size: 0.82rem;
+    line-height: 1.8;
+    color: var(--text-dim);
+    letter-spacing: 0.01em;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .content li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  .content a {
+    color: var(--text-dim);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    transition: color 0.3s ease;
+  }
+
+  .content a:hover {
+    color: var(--text);
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-top: 3rem;
+    opacity: 0;
+    animation: fadeIn 1.2s var(--ease-out) 1.1s forwards;
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 6rem 1.2rem 4rem; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="mesh"></canvas>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-brand"><span class="y">Y</span>Complex</a>
+  <div class="nav-right">
+    <a href="../software.html" class="nav-link">Software</a>
+    <a href="mailto:contact@ycomplex.com" class="nav-link">Contact</a>
+  </div>
+</nav>
+
+<div class="corner corner-tl"></div>
+<div class="corner corner-br"></div>
+
+<main class="page">
+  <div class="page-inner">
+
+    <div class="page-header">
+      <h1 class="page-title">SpeedRead Privacy Policy</h1>
+      <p class="page-subtitle">Last updated &mdash; February 26, 2026</p>
+    </div>
+
+    <div class="content">
+      <h2>Overview</h2>
+      <p>
+        SpeedRead is built by YComplex. Your privacy is straightforward: we do not collect, store, or transmit any of your personal data. The app works entirely on your device.
+      </p>
+
+      <h2>Data Collection</h2>
+      <p>
+        SpeedRead does not collect any personal information. We do not track your usage, reading habits, document contents, or any other data. There are no analytics, no telemetry, and no third-party tracking SDKs in the app.
+      </p>
+
+      <h2>Data Storage</h2>
+      <p>
+        All data created by SpeedRead&mdash;including your document library, reading positions, settings, and preferences&mdash;is stored locally on your device. Nothing is sent to external servers. Your data stays on your phone.
+      </p>
+
+      <h2>Document Processing</h2>
+      <p>
+        When you import files or add web articles, all processing happens on your device:
+      </p>
+      <ul>
+        <li>EPUB, PDF, TXT, and Markdown files are parsed locally</li>
+        <li>Web articles are fetched directly by the app and processed on-device</li>
+        <li>No document content is ever sent to YComplex or any third party</li>
+      </ul>
+
+      <h2>Third-Party Services</h2>
+      <p>
+        SpeedRead does not integrate with any third-party analytics, advertising, or tracking services. There are no ads in the app.
+      </p>
+
+      <h2>Children&rsquo;s Privacy</h2>
+      <p>
+        Since SpeedRead does not collect any data from anyone, it does not knowingly collect data from children under 13.
+      </p>
+
+      <h2>Changes to This Policy</h2>
+      <p>
+        If we ever update this privacy policy, changes will be posted on this page with an updated date. Given that we collect no data, we do not anticipate significant changes.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        If you have questions about this privacy policy, contact us at <a href="mailto:contact@ycomplex.com">contact@ycomplex.com</a>.
+      </p>
+
+      <div class="back-link">
+        <a class="link-accent" href="speedread.html">&larr; Back to SpeedRead</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script src="../mesh.js"></script>
+<script>initMesh({ nodeCount: 20, connectionDistance: 160 });</script>
+
+</body>
+</html>
