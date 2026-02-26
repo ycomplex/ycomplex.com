@@ -216,4 +216,7 @@ body::after {
   .corner-tl { top: 1rem; left: 1rem; }
   .corner-br { bottom: 1rem; right: 1rem; }
   .nav { padding: 1rem 1.2rem; }
+  .nav-brand { font-size: 0.95rem; }
+  .nav-right { gap: 1.2rem; }
+  .nav-link { font-size: 0.7rem; }
 }
