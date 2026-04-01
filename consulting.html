@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consulting — YComplex</title>
+<meta name="description" content="YComplex Consulting — Technology strategy, AI implementation, and digital transformation">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .page {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    padding: 8rem 2rem 6rem;
+  }
+
+  .page-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* ---- Hero ---- */
+  .hero {
+    text-align: center;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: fadeIn 1.2s var(--ease-out) 0.4s forwards;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-sub {
+    font-family: var(--font-mono);
+    font-weight: 300;
+    font-size: clamp(0.85rem, 1.4vw, 1rem);
+    color: var(--text-dim);
+    letter-spacing: 0.03em;
+    line-height: 1.7;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* ---- Sections ---- */
+  .section {
+    margin-bottom: 4rem;
+    opacity: 0;
+  }
+
+  .section-1 { animation: fadeIn 1.2s var(--ease-out) 0.8s forwards; }
+  .section-2 { animation: fadeIn 1.2s var(--ease-out) 1.1s forwards; }
+  .section-3 { animation: fadeIn 1.2s var(--ease-out) 1.4s forwards; }
+  .section-4 { animation: fadeIn 1.2s var(--ease-out) 1.7s forwards; }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .section p {
+    font-family: var(--font-mono);
+    font-weight: 300;
+    font-size: 0.85rem;
+    line-height: 1.9;
+    color: var(--text-dim);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.2rem;
+  }
+
+  .section p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ---- Clients list ---- */
+  .clients {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .client-line {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text);
+    letter-spacing: 0.02em;
+  }
+
+  /* ---- Portfolio ---- */
+  .portfolio-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .portfolio-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.4rem 1.5rem;
+    transition: border-color 0.4s ease, background 0.4s ease;
+  }
+
+  .portfolio-item:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-card-hover);
+  }
+
+  .portfolio-client {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .portfolio-work {
+    font-family: var(--font-mono);
+    font-weight: 300;
+    font-size: 0.8rem;
+    line-height: 1.8;
+    color: var(--text-dim);
+    letter-spacing: 0.01em;
+  }
+
+  /* ---- Background block ---- */
+  .background-block {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2rem 2rem;
+  }
+
+  .background-block .stat {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+    letter-spacing: 0.01em;
+  }
+
+  .background-block .stat strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .background-block .roles {
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-weight: 300;
+    font-size: 0.78rem;
+    line-height: 1.9;
+    color: var(--text-dim);
+    letter-spacing: 0.01em;
+  }
+
+  .background-block .roles .role-highlight {
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  /* ---- Divider ---- */
+  .section-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+    margin: 0 auto 4rem;
+    opacity: 0;
+    animation: scaleX 1s var(--ease-out) 1.9s forwards;
+    transform: scaleX(0);
+  }
+
+  /* ---- CTA ---- */
+  .cta {
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1.2s var(--ease-out) 2.1s forwards;
+  }
+
+  .cta-button {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 1em 2.5em;
+    border-radius: 3px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.4s ease;
+    box-shadow: 0 4px 20px rgba(201, 168, 76, 0.15);
+  }
+
+  .cta-button:hover {
+    box-shadow: 0 6px 30px rgba(201, 168, 76, 0.25);
+  }
+
+  .cta-button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%);
+    animation: shimmer 3s ease-in-out infinite;
+    transform: translateX(-100%);
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    60%, 100% { transform: translateX(100%); }
+  }
+
+  .cta-sub {
+    font-family: var(--font-mono);
+    font-weight: 300;
+    font-size: 0.78rem;
+    color: var(--text-dimmer);
+    margin-top: 1.2rem;
+    letter-spacing: 0.04em;
+  }
+
+  .cta-sub a {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .cta-sub a:hover { color: var(--accent); }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 600px) {
+    .page { padding: 6rem 1.2rem 4rem; }
+    .background-block { padding: 1.4rem 1.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="mesh"></canvas>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="y">Y</span>Complex</a>
+  <div class="nav-right">
+    <a href="software.html" class="nav-link">Software</a>
+    <a href="mailto:contact@ycomplex.com" class="nav-link">Contact</a>
+  </div>
+</nav>
+
+<div class="corner corner-tl"></div>
+<div class="corner corner-br"></div>
+
+<main class="page">
+  <div class="page-inner">
+
+    <div class="hero">
+      <h1 class="hero-title">Consulting</h1>
+      <p class="hero-sub">I help leaders turn technology from a question mark into a competitive advantage.</p>
+    </div>
+
+    <div class="section section-1">
+      <div class="section-label">How I Work</div>
+      <p>
+        I embed directly with leadership teams - sometimes as strategist, sometimes as builder, often both in the same engagement. There are no layers, no juniors, no handoffs. When you work with YComplex, you work with me.
+      </p>
+      <p>
+        When I advise on a technical direction, I can also build the proof of concept. When I build, I understand the business context it sits in. That range - from boardroom to codebase - means fewer gaps, faster decisions, and work that actually ships.
+      </p>
+      <p>
+        Whether it's defining an AI strategy, standing up a new product, training a leadership team on what's now possible, or serving as a fractional technology leader - I adapt to what the situation needs.
+      </p>
+    </div>
+
+    <div class="section section-2">
+      <div class="section-label">Who I Work With</div>
+      <div class="clients">
+        <span class="client-line">Founders &amp; startups</span>
+        <span class="client-line">Mid-market PE portfolio companies</span>
+        <span class="client-line">Enterprise leadership teams</span>
+      </div>
+      <p>
+        I have particular depth in technology, financial services, and telecoms - but I'm not limited to those industries. The common thread is leaders who need senior technical thinking paired with strategic clarity.
+      </p>
+    </div>
+
+    <div class="section section-3">
+      <div class="section-label">Selected Projects</div>
+      <div class="portfolio-list">
+        <div class="portfolio-item">
+          <div class="portfolio-client">Leading Global Management Consultancy</div>
+          <p class="portfolio-work">Created their integrated digital consulting offering, merging teams of traditional management consultants with designers, developers, and product-skilled technology professionals.</p>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-client">Leading Digital Bank</div>
+          <p class="portfolio-work">Served as product lead pre-launch, defining proposition, onboarding mechanism, and customer experience. The launch was the most successful digital bank launch in UK history.</p>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-client">Leading UK Commercial Bank</div>
+          <p class="portfolio-work">Created and launched a new small business proposition to extend beyond traditional banking, building an advisory relationship with customers and deepening the customer relationship.</p>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-client">UK Tradesperson Directory</div>
+          <p class="portfolio-work">Created a two-sided marketplace for tradesperson booking, helping one of the UK's most trusted directories build a real digital offering. Concept to first launch in 6 weeks.</p>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-client">Caribbean Telco</div>
+          <p class="portfolio-work">Consolidated digital platforms across multiple island operating companies to drive massive cost savings in a distressed turnaround situation.</p>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-client">SaaS Provider for Care Organisations</div>
+          <p class="portfolio-work">Built the next-generation refresh of their product platform with a greenfield build. First customer sales within 7 weeks of project start.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section section-4">
+      <div class="section-label">Background</div>
+      <div class="background-block">
+        <div class="stat"><strong>25 years</strong> in technology and strategy</div>
+        <div class="stat"><strong>Stanford University</strong> - B.S. and M.S. in Computer Science</div>
+        <div class="stat"><strong>London Business School</strong> - MBA</div>
+        <div class="roles">
+          <span class="role-highlight">Head of Strategy, Skype</span> · <span class="role-highlight">Global Head of Digital, Vodafone</span> · <span class="role-highlight">Associate Partner, McKinsey</span><br>
+          Leadership roles at Microsoft, JP Morgan, Morgan Stanley, and Cisco
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="cta">
+      <a href="https://calendar.app.google/tq7YUogLHbEvEDQ2A" class="cta-button" target="_blank" rel="noopener">Book a Conversation</a>
+      <p class="cta-sub">Or email <a href="mailto:contact@ycomplex.com">contact@ycomplex.com</a></p>
+    </div>
+
+  </div>
+</main>
+
+<script src="mesh.js"></script>
+<script>initMesh({ nodeCount: 30, connectionDistance: 160 });</script>
+
+</body>
+</html>

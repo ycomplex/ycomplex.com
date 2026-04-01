@@ -115,13 +115,25 @@
     font-size: clamp(0.8rem, 1.4vw, 1rem);
   }
 
+  .booking {
+    margin-top: 1rem;
+    opacity: 0;
+    animation: fadeIn 1.2s var(--ease-out) 1.9s forwards;
+  }
+
+  .booking a {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: clamp(0.75rem, 1.2vw, 0.88rem);
+  }
+
   .rule-bottom {
     width: 1px;
     height: 80px;
     background: linear-gradient(to top, transparent, var(--accent-dim));
     margin: 3rem auto 0;
     opacity: 0;
-    animation: fadeSlideUp 1.2s var(--ease-out) 1.9s forwards;
+    animation: fadeSlideUp 1.2s var(--ease-out) 2.2s forwards;
   }
 
   @media (max-width: 600px) {
@@ -140,10 +152,13 @@
 <div class="container">
   <div class="rule"></div>
   <h1 class="brand"><span class="y">Y</span>Complex</h1>
-  <p class="tagline">Digital &middot; AI &middot; <a href="software.html">Software</a></p>
+  <p class="tagline"><a href="consulting.html">Consulting</a> &middot; AI &middot; <a href="software.html">Software</a></p>
   <div class="divider"></div>
   <div class="contact">
     <a class="link-accent" href="mailto:contact@ycomplex.com">contact@ycomplex.com</a>
+  </div>
+  <div class="booking">
+    <a class="link-accent" href="https://calendar.app.google/tq7YUogLHbEvEDQ2A" target="_blank" rel="noopener">Book a Conversation &rarr;</a>
   </div>
   <div class="rule-bottom"></div>
 </div>
